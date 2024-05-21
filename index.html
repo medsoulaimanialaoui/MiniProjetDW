@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">
+                <img src="Logo.png" alt="Page Logo" id="logo">
+            </a>
+            <h1>Products</h1>
+        </nav>
+    </header>
+    <main>
+        <div class="addProBtn">
+            <i class="fa-regular fa-plus" id="addProduct"></i>
+            <span>Add Product</span>
+        </div>
+        <div id="popupForm" style="display: none;">
+            <form id="addProductForm" action="addProduct.php" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter product name" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" placeholder="Enter product description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="number" id="price" name="price" placeholder="Enter product price" required>
+                </div>
+                <div class="form-group">
+                    <label for="image">Image</label>
+                    <input type="file" id="image" name="image" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="addItem" name="addProduct">Add</button>
+                    <button type="button" id="cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+        
+        <div id="updateForm" style="display: none;">
+            <form id="updateProductForm" action="updateProduct.php" method="post" enctype="multipart/form-data">
+                <input type="hidden" id="updateId" name="id">
+                <div class="form-group">
+                    <label for="updateName">Name</label>
+                    <input type="text" id="updateName" name="name" placeholder="Enter product name" required>
+                </div>
+                <div class="form-group">
+                    <label for="updateDescription">Description</label>
+                    <textarea id="updateDescription" name="description" placeholder="Enter product description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="updatePrice">Price</label>
+                    <input type="number" id="updatePrice" name="price" placeholder="Enter product price" required>
+                </div>
+                <div class="form-group">
+                    <label for="updateImage">Image</label>
+                    <input type="file" id="updateImage" name="image">
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="updateItem" name="updateProduct">Update</button>
+                    <button type="button" id="cancelUpdate">Cancel</button>
+                </div>
+            </form>
+        </div>
+        
+        <div id="viewForm" style="display: none;">
+            <div class="popup-content">
+                <h2 id="viewName"></h2>
+                <div class="image-container">
+                    <img id="viewImage" src="" alt="Product Image">
+                </div>
+                <div class="details">
+                    <p id="viewDescription"></p>
+                    <strong id="viewPrice"></strong>
+                </div>
+                <div class="buttons">
+                    <button type="button" id="closeView">Close</button>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="products-container">
+            <div class="products">
+                
+            </div>
+        </div>
+        
+        <div class="up">
+            <i class="fa-solid fa-arrow-up"></i>
+        </div>
+    </main>
+    <footer>
+        <div class="socialMedia-icons">
+            <a id="linkedin" href="https://www.linkedin.com/in/medsoulaimanialaoui/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a id="github" href="https://github.com/medsoulaimanialaoui" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
+        <p>
+            <span id="myname">Mohammed Soulaimani Alaoui</span> &copy; 2024
+        </p>
+    </footer>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
